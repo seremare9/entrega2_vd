@@ -30,7 +30,7 @@
 
   /* Escala para género musical favorito (color de la sombra)*/
    let GeneroMusical = d3.scaleOrdinal()
-    .domain(["Rock", "Indie", "Pop", "Hip-Hop", "Jazz", "Otro"])
+    .domain(["Rock", "Indie", "Pop", "Hip-hop", "Jazz", "Otro"])
     .range(["#FF9999", "#FFC399", "#FFEE99","#FF99FF","#AA99FF","#BBFF99"])
   
   onMount(() => {
@@ -66,7 +66,7 @@
     {#each respuestas as rta}
       <div class="person-container">
         <img src="{Genero(rta.Genero)}" alt="genero">
-        <img src="{Plataforma(rta.Plataforma)}" alt="sombra">
+        <!-- <img src="{Plataforma(rta.Plataforma)}" alt="sombra"> -->
         style="width: {TiempoEnHoras(rta.TiempoDeEscucha)}px;" 
         <svg height="200" width="200" xmlns="http://www.w3.org/2000/svg">
           <circle r="45" cx="50" cy="50" fill={GeneroMusical(rta.GeneroMusical)}/>
