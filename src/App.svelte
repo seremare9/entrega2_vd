@@ -9,7 +9,7 @@
   let Genero = d3
     .scaleOrdinal() /* dato categóricos */
     .domain(["Femenino", "Masculino", "No Binario"])
-    .range(["./images/corchea_final.png", "./images/semicorchea_final.png", "./images/negra_final.png"])
+    .range(["../images/corchea_final.png", "../images/semicorchea_final.png", "../images/negra_final.png"])
 
   /* Escala para tiempo de escucha (tamaño de la nota musical)*/
   let TiempoEnHoras = d3
@@ -65,9 +65,14 @@
     <!-- Iteramos la data para visualizar c/ entidad -->
     {#each respuestas as rta}
       <div class="person-container">
-        <img src="{Genero(rta.Genero)}" alt="genero">
+        <img src={Genero(rta.Genero)} alt="nota" class="nota">
+        <div class="nota"
+          style=
+          "background-color: {MomentoDeEscucha(rta.Momento)}
+          width: {TiempoEnHoras(rta.TiempoDeEscucha)}px"
+      ></div>  
         <!-- <img src="{Plataforma(rta.Plataforma)}" alt="sombra"> -->
-        style="width: {TiempoEnHoras(rta.TiempoDeEscucha)}px;" 
+        <!-- style="width: {TiempoEnHoras(rta.TiempoDeEscucha)}px;"  -->
         <svg height="300" width="300" xmlns="http://www.w3.org/2000/svg" class="difuminado">
           <circle r="110" cx="150" cy="150" fill={GeneroMusical(rta.GeneroMusical)}/>
            <!-- Falta definir la forma de Tidal -->
@@ -142,6 +147,12 @@
     background-color: gold;
     margin: 5px 0;
   } */
+  .nota {
+    filter: brightness(0) invert(1);
+    mix-blend-mode: color;
+    width: 100px;
+    z-index: 2;
+  }
   .name {
     font-size: 15px;
     color: rgb(65, 65, 65);
@@ -150,9 +161,9 @@
     margin-top: 5px;
   }
   .cancionFav {
-    font-size: 12px;
+    font-size: 13px;
     color: rgb(65, 65, 65);
-    font-weight: normal;
+    font-weight: light;
     font-style: italic;
     text-align: center;
     margin-top: 5px;
@@ -161,6 +172,7 @@
   .difuminado{
     background: radial-gradient(circle, transparent 0%, rgba(255,255,255,0.5) 100%); /* Crea un gradiente radial */
     filter: blur(9px);
+    z-index: 1;
   }
     
 </style>
