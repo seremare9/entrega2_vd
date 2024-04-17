@@ -13,7 +13,7 @@
   let Genero = d3
     .scaleOrdinal() /* dato categóricos */
     .domain(["Femenino", "Masculino", "No Binario"])
-    .range(["", ""])
+    .range(["./images/corchea_final.png", "./images/semicorchea_final.png", "./images/negra_final.png"])
     // NOTA MUSICAL
 
   /* 3. Escala para tiempo de escucha (en horas) */
