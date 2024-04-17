@@ -98,20 +98,13 @@
         <img src="{Plataforma(rta.Plataforma)}" alt="sombra">
         style="width: {TiempoEnHoras(rta.TiempoDeEscucha)}px;" 
         background-color:{GeneroMusical(rta.GeneroMusical)};"  
-
-
-        <div
-          class="person"
-          
-        
-        ></div>
-        <div
-
-        ></div>
         <p class="name">
           <b>{rta.Nombre}</b>
           <br />
-          {rta.Cancion}
+        </p>
+        <p class="cancionFav">
+          <b>{rta.Cancion}</b>
+          <br />
         </p>
       </div>
     {/each}
@@ -160,14 +153,13 @@
     align-items: center;
     flex: 180px 0 0;
   }
-  .person {
+  /* .person {
     width: 100px;
     height: 100px;
     border: 10px solid black;
     border-radius: 50%;
     box-sizing: border-box;
-  
-  }
+  } */
   /* .medal {
     width: 15px;
     height: 15px;
@@ -176,12 +168,19 @@
     margin: 5px 0;
   } */
   .name {
-    font-size: 14px;
+    font-size: 15px;
     color: rgb(65, 65, 65);
-    font-weight: normal;
+    font-weight: bold;
     text-align: center;
     margin-top: 5px;
   }
-
+  .cancionFav {
+    font-size: 12px;
+    color: rgb(65, 65, 65);
+    font-weight: normal;
+    font-style: italic;
+    text-align: center;
+    margin-top: 5px;
+  }
     
 </style>
