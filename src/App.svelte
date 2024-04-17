@@ -12,21 +12,21 @@
   /* 2. Escala para genero */
   let Genero = d3
     .scaleOrdinal() /* dato categóricos */
-    .domain(["F", "M", "NB"])
-    // .range(["#ffc0cb", "#c0f9ff"])
+    .domain(["Femenino", "Masculino", "No Binario"])
+    .range(["", ""])
     // NOTA MUSICAL
 
   /* 3. Escala para tiempo de escucha (en horas) */
   let TiempoEnHoras = d3
     .scaleLinear()
     .domain(["0-4","5-9","10 o más"])
-    // .range([])
+    .range([])
     // TAMAÑO DE LA NOTA MUSICAL
 
   /* 4. Escala para momento de escucha */
   let colorContinentes = d3
     .scaleOrdinal()
-    .domain(["Manana", "Tarde", "Noche"])
+    .domain(["Mañana", "Tarde", "Noche"])
     // .range(["#ed334e", "#000000", "#fbb132", "#009fe3", "#00963f"])
         // COLOR DE LA NOTA MUSICAL
 
@@ -39,7 +39,7 @@
   /* 6. Escala para género musical favorito */
    let GeneroMusical = d3.scaleOrdinal()
     .domain(["Rock", "Indie", "Pop", "Hip-Hop", "Jazz", "Otro"])
-    //.range(["rojo", "naranja", "amarillo","magenta","violeta","verde"])
+    .range(["#FF9999", "#FFC399", "#FFEE99","#FF99FF","#AA99FF","#BBFF99"])
   
 
   // /* 5. Escala para medallas */
