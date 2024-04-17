@@ -4,64 +4,35 @@
 
   /* Array donde guardaremos la data */
   let respuestas = []
-
-  // Función para generar los arcos
-  function arcGenerator({startAngle, endAngle, innerRadius, outerRadius}) {
-    return d3.arc()({
-      startAngle,
-      endAngle,
-      innerRadius,
-      outerRadius,
-    })
-  }
-
-  // /* 1. Escala para edades */
-  // let grosor = d3.scaleLinear().range([5, 20]) /* datos cuantitativos -> escala lineal */
-
   
-  /* 2. Escala para genero */
+  /* Escala para genero (nota musical) */
   let Genero = d3
     .scaleOrdinal() /* dato categóricos */
     .domain(["Femenino", "Masculino", "No Binario"])
     .range(["./images/corchea_final.png", "./images/semicorchea_final.png", "./images/negra_final.png"])
-    // NOTA MUSICAL
 
-  /* 3. Escala para tiempo de escucha (en horas) */
+  /* Escala para tiempo de escucha (tamaño de la nota musical)*/
   let TiempoEnHoras = d3
     .scaleLinear()
     .domain(["0-4","5-9","10 o más"])
     .range([80,100,120])
-    // TAMAÑO DE LA NOTA MUSICAL
 
-  /* 4. Escala para momento de escucha */
+  /* Escala para momento de escucha (color de la nota musical)*/
   let MomentoDeEscucha = d3
     .scaleOrdinal()
     .domain(["Mañana", "Tarde", "Noche"])
     .range(["#94B8D7", "#365B77", "#02152B"])
-      // COLOR DE LA NOTA MUSICAL
 
-  /* 5. Escala para plataforma favorita */
-  let Plataforma = d3.arc()
+  /* Escala para plataforma favorita (forma de la sombra) */
+  let Plataforma = d3.scaleOrdinal()
     .domain(["Spotify", "Tidal"])
-    //.range(["gold", "silver", "brown"])
-    // FORMA DE LA SOMBRA
-  
+    .range(["Ellipse.svg", "Star.svg"])
 
- // let grosor = d3.scaleLinear().range([5, 20]) /* datos cuantitativos -> escala lineal */
-
-
-
-  /* 6. Escala para género musical favorito */
+  /* Escala para género musical favorito (color de la sombra)*/
    let GeneroMusical = d3.scaleOrdinal()
     .domain(["Rock", "Indie", "Pop", "Hip-Hop", "Jazz", "Otro"])
     .range(["#FF9999", "#FFC399", "#FFEE99","#FF99FF","#AA99FF","#BBFF99"])
   
-
-  // /* 5. Escala para medallas */
-  // let colorMedalla = d3.scaleOrdinal()
-  //   .domain(["Oro", "Plata", "Bronce"])
-  //   .range(["gold", "silver", "brown"])
-
   onMount(() => {
     d3.csv("./data/Proyecto2VD.csv", d3.autoType).then(data => {
       console.log(data)
@@ -97,7 +68,11 @@
         <img src="{Genero(rta.Genero)}" alt="genero">
         <img src="{Plataforma(rta.Plataforma)}" alt="sombra">
         style="width: {TiempoEnHoras(rta.TiempoDeEscucha)}px;" 
-        background-color:{GeneroMusical(rta.GeneroMusical)};"  
+        <svg height="200" width="200" xmlns="http://www.w3.org/2000/svg">
+          <circle r="45" cx="50" cy="50" fill={GeneroMusical(rta.GeneroMusical)}/>
+           <!-- Falta definir la forma de Tidal -->
+        </svg>
+
         <p class="name">
           <b>{rta.Nombre}</b>
           <br />
