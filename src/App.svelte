@@ -68,8 +68,8 @@
         <img src="{Genero(rta.Genero)}" alt="genero">
         <!-- <img src="{Plataforma(rta.Plataforma)}" alt="sombra"> -->
         style="width: {TiempoEnHoras(rta.TiempoDeEscucha)}px;" 
-        <svg height="200" width="200" xmlns="http://www.w3.org/2000/svg">
-          <circle r="45" cx="50" cy="50" fill={GeneroMusical(rta.GeneroMusical)}/>
+        <svg height="300" width="300" xmlns="http://www.w3.org/2000/svg" class="difuminado">
+          <circle r="110" cx="150" cy="150" fill={GeneroMusical(rta.GeneroMusical)}/>
            <!-- Falta definir la forma de Tidal -->
         </svg>
 
@@ -156,6 +156,11 @@
     font-style: italic;
     text-align: center;
     margin-top: 5px;
+  }
+  
+  .difuminado{
+    background: radial-gradient(circle, transparent 0%, rgba(255,255,255,0.5) 100%); /* Crea un gradiente radial */
+    filter: blur(9px);
   }
     
 </style>
