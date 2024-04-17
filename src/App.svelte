@@ -3,7 +3,17 @@
   import {onMount} from "svelte"
 
   /* Array donde guardaremos la data */
-  let alumnos = []
+  let respuestas = []
+
+  // Función para generar los arcos
+  function arcGenerator({startAngle, endAngle, innerRadius, outerRadius}) {
+    return d3.arc()({
+      startAngle,
+      endAngle,
+      innerRadius,
+      outerRadius,
+    })
+  }
 
   // /* 1. Escala para edades */
   // let grosor = d3.scaleLinear().range([5, 20]) /* datos cuantitativos -> escala lineal */
@@ -20,22 +30,27 @@
   let TiempoEnHoras = d3
     .scaleLinear()
     .domain(["0-4","5-9","10 o más"])
-    .range([])
+    .range([80,100,120])
     // TAMAÑO DE LA NOTA MUSICAL
 
   /* 4. Escala para momento de escucha */
-  let colorContinentes = d3
+  let MomentoDeEscucha = d3
     .scaleOrdinal()
     .domain(["Mañana", "Tarde", "Noche"])
-    // .range(["#ed334e", "#000000", "#fbb132", "#009fe3", "#00963f"])
-        // COLOR DE LA NOTA MUSICAL
+    .range(["#94B8D7", "#365B77", "#02152B"])
+      // COLOR DE LA NOTA MUSICAL
 
   /* 5. Escala para plataforma favorita */
-  let Plataforma = d3.scaleOrdinal()
+  let Plataforma = d3.arc()
     .domain(["Spotify", "Tidal"])
-    // .range(["gold", "silver", "brown"])
+    //.range(["gold", "silver", "brown"])
     // FORMA DE LA SOMBRA
   
+
+ // let grosor = d3.scaleLinear().range([5, 20]) /* datos cuantitativos -> escala lineal */
+
+
+
   /* 6. Escala para género musical favorito */
    let GeneroMusical = d3.scaleOrdinal()
     .domain(["Rock", "Indie", "Pop", "Hip-Hop", "Jazz", "Otro"])
@@ -48,52 +63,55 @@
   //   .range(["gold", "silver", "brown"])
 
   onMount(() => {
-    d3.csv("./data/deportistas.csv", d3.autoType).then(data => {
+    d3.csv("./data/Proyecto2VD.csv", d3.autoType).then(data => {
       console.log(data)
 
       /* Actualizamos dominio con la data de edad */
-      let minMaxEdad = d3.extent(data, d => d.edad)
-      grosor = grosor.domain(minMaxEdad)
+      // let minMaxEdad = d3.extent(data, d => d.edad)
+      // grosor = grosor.domain(minMaxEdad)
 
       /* Actualizamos dominio y rango con la data de altura */
-      let minMaxAltura = d3.extent(data, d => d.altura)
-      radioAltura = radioAltura.domain(minMaxAltura).range([25, 50])
+      // let minMaxAltura = d3.extent(data, d => d.altura)
+      // radioAltura = radioAltura.domain(minMaxAltura).range([25, 50])
 
-      deportistas = data
+      respuestas = data
     })
   })
 </script>
 
 <main>
   <div class="header">
-    <img src="/images/olympics-logo.png" width="100" alt="anillos" />
+    <img src="/images/logo.png" width="100" alt="logo" />
     <h3 class="headline">
-      <b>Triunfos Olímpicos</b>
-      Medallas, alturas y continentes
+      <b>Preferencias Musicales</b>
+      Visualización de Datos
     </h3>
-    <p class="bajada">Explorando los logros olímpicos a través de datos</p>
+    <p class="bajada">Josefina Jahde y Serena Marelli</p>
   </div>
 
   <!-- Conedor de las entidades -->
   <div class="container">
     <!-- Iteramos la data para visualizar c/ entidad -->
-    {#each deportistas as dep}
+    {#each respuestas as rta}
       <div class="person-container">
-        <div class="medal"
-          style="background-color: {colorMedalla(dep.medalla)}"
-          ></div>
+        <img src="{Genero(rta.Genero)}" alt="genero">
+        <img src="{Plataforma(rta.Plataforma)}" alt="sombra">
+        style="width: {TiempoEnHoras(rta.TiempoDeEscucha)}px;" 
+        background-color:{GeneroMusical(rta.GeneroMusical)};"  
+
+
         <div
           class="person"
-          style="border-width: {grosor(dep.edad)}px; 
-        background-color:{colorGenero(dep.genero)}; 
-        width: {2 * radioAltura(dep.altura)}px; 
-        height: {2 * radioAltura(dep.altura)}px; 
-        border-color: {colorContinentes(dep.continente)}"
+          
+        
+        ></div>
+        <div
+
         ></div>
         <p class="name">
-          <b>{dep.nombre}</b>
+          <b>{rta.Nombre}</b>
           <br />
-          {dep.continente}
+          {rta.Cancion}
         </p>
       </div>
     {/each}
@@ -148,21 +166,22 @@
     border: 10px solid black;
     border-radius: 50%;
     box-sizing: border-box;
-    background-color: pink;
+  
   }
-  .medal {
+  /* .medal {
     width: 15px;
     height: 15px;
     border-radius: 50%;
     background-color: gold;
     margin: 5px 0;
-  }
+  } */
   .name {
     font-size: 14px;
     color: rgb(65, 65, 65);
     font-weight: normal;
     text-align: center;
     margin-top: 5px;
-    
   }
+
+    
 </style>
