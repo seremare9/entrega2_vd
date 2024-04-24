@@ -1,5 +1,5 @@
-Nombre,Genero,TiempoDeEscucha,Momento,Plataforma,GeneroMusical,Cancion
-Josefina,Femenino,0-4,Tarde,Spotify,Hip-hop,Sweater Weather
+Nombre,Genero,TiempoEnHoras,Momento,Plataforma,GeneroMusical,Cancion
+Josefina,Femenino,5-9,Tarde,Spotify,Hip-hop,Sweater Weather
 Serena,Femenino,0-4,Mañana,Spotify,Rock,Holding on to You
 Valentina,Femenino,0-4,Tarde,Spotify,Pop,
 Isabel,Femenino,0-4,Mañana,Spotify,Rock ,Bohemian Rhapsody
