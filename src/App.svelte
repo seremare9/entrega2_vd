@@ -9,7 +9,7 @@
   let Genero = d3
     .scaleOrdinal() /* dato categóricos */
     .domain(["Femenino", "Masculino", "No Binario"])
-    .range(["../images/corchea_final.png", "../images/semicorchea_final.png", "../images/negra_final.png"])
+    .range(["../images/corchea.svg", "../images/semicorchea.svg", "../images/negra.svg"])
 
   /* Escala para tiempo de escucha (tamaño de la nota musical)*/
   let TiempoEnHoras = d3
@@ -65,19 +65,55 @@
     <!-- Iteramos la data para visualizar c/ entidad -->
     {#each respuestas as rta}
       <div class="person-container">
-        <img src={Genero(rta.Genero)} alt="nota" class="nota">
-        <div 
-          class="nota"
-          style= "width: {TiempoEnHoras(rta.TiempoDeEscucha)}px;
-          background-color: {MomentoDeEscucha(rta.MomentoDeEscucha)};"
-      ></div>  
-        <!-- <img src="{Plataforma(rta.Plataforma)}" alt="sombra"> -->
-        <!-- style="width: {TiempoEnHoras(rta.TiempoDeEscucha)}px;"  -->
+        <div class = "aspectoNota">
+            {#if rta.Genero == "Masculino"}
+              {#if rta.TiempoEnHoras == "0-4"}
+                <svg width="80" viewBox="0 0 112.89 151.78" xmlns="http://www.w3.org/2000/svg"> 
+                <path d="M42.72,24.58c23,9.39,46,18.78,69,28.17v-23.17C88.72,19.97,65.72,10.36,42.72.75v23.83Z"
+                fill = {MomentoDeEscucha(rta.Momento)}/>
+                </svg>
+              {:else if rta.TiempoEnHoras == "5-9"}
+                <svg width="100" viewBox="0 0 112.89 151.78" xmlns="http://www.w3.org/2000/svg"> 
+                <path d="M42.72,24.58c23,9.39,46,18.78,69,28.17v-23.17C88.72,19.97,65.72,10.36,42.72.75v23.83Z"
+                fill = {MomentoDeEscucha(rta.Momento)}/>
+                </svg>
+              {:else if rta.TiempoEnHoras == "10 o más"}
+                <svg width="120" viewBox="0 0 112.89 151.78" xmlns="http://www.w3.org/2000/svg"> 
+                <path d="M42.72,24.58c23,9.39,46,18.78,69,28.17v-23.17C88.72,19.97,65.72,10.36,42.72.75v23.83Z"
+                fill = {MomentoDeEscucha(rta.Momento)}/>
+                </svg>
+
+            {:else if rta.Genero == "Femenino"}
+              {#if rta.TiempoEnHoras == "0-4"}
+                <svg width="80" viewBox="0 0 82.25 121.83" xmlns="http://www.w3.org/2000/svg"> 
+                <path d="M42.96,2.7c.62,2.68,1.42,4.71,2,6,.9,2.02,3.16,6.5,16.42,19.58.93.92.96.94,1.35,1.33,4.55,4.56,16.46,17.54,18.65,32.67,2.43,16.88-7.99,31.32-9,31-.99-.31,6.93-14.73,2-31-3.67-12.12-12.56-18.93-14-20-6.21-4.63-12.43-6.32-16-7-.47-10.86-.95-21.72-1.42-32.58Z"
+                fill = {MomentoDeEscucha(rta.Momento)}/>
+                </svg>
+              {:else if rta.TiempoEnHoras == "5-9"}
+                  <svg width="100" viewBox="0 0 82.25 121.83" xmlns="http://www.w3.org/2000/svg"> 
+                  <path d="M42.96,2.7c.62,2.68,1.42,4.71,2,6,.9,2.02,3.16,6.5,16.42,19.58.93.92.96.94,1.35,1.33,4.55,4.56,16.46,17.54,18.65,32.67,2.43,16.88-7.99,31.32-9,31-.99-.31,6.93-14.73,2-31-3.67-12.12-12.56-18.93-14-20-6.21-4.63-12.43-6.32-16-7-.47-10.86-.95-21.72-1.42-32.58Z"
+                  fill = {MomentoDeEscucha(rta.Momento)}/>
+                  </svg>
+              {:else if rta.TiempoEnHoras == "10 o más"}
+                  <svg width="120" viewBox="0 0 82.25 121.83" xmlns="http://www.w3.org/2000/svg"> 
+                  <path d="M42.96,2.7c.62,2.68,1.42,4.71,2,6,.9,2.02,3.16,6.5,16.42,19.58.93.92.96.94,1.35,1.33,4.55,4.56,16.46,17.54,18.65,32.67,2.43,16.88-7.99,31.32-9,31-.99-.31,6.93-14.73,2-31-3.67-12.12-12.56-18.93-14-20-6.21-4.63-12.43-6.32-16-7-.47-10.86-.95-21.72-1.42-32.58Z"
+                  fill = {MomentoDeEscucha(rta.Momento)}/>
+                  </svg>
+            
+          {:else if rta.Genero == "No Binario"}
+            <svg width="100" viewBox="0 0 44.42 121.83" xmlns="http://www.w3.org/2000/svg"> 
+              <path d="M41.41,0c-.11,58.76-.09,82.96,0,88,0,.08.03,1.75,0,4-.09,6.8-.14,10.2-1,13-1.8,5.88-6.82,9.22-8,10-9.93,6.6-26.31,4.04-29-3-2.03-5.31,4.15-12.07,5-13,10.9-11.93,30.85-7.51,33-7"
+              fill = {MomentoDeEscucha(rta.Momento)}/>
+            </svg>
+          {/if}
+        </div>
+
         <svg height="300" width="300" xmlns="http://www.w3.org/2000/svg" class="difuminado">
           <circle r="110" cx="150" cy="150" fill={GeneroMusical(rta.GeneroMusical)}/>
-           <!-- Falta definir la forma de Tidal -->
+             <!-- Falta definir la forma de Tidal -->
         </svg>
-
+        <!-- <img src="{Plataforma(rta.Plataforma)}" alt="sombra"> -->
+        <!-- style="width: {TiempoEnHoras(rta.TiempoDeEscucha)}px;"  -->
         <p class="name">
           <b>{rta.Nombre}</b>
           <br />
