@@ -66,10 +66,10 @@
     {#each respuestas as rta}
       <div class="person-container">
         <img src={Genero(rta.Genero)} alt="nota" class="nota">
-        <div class="nota"
-          style=
-          "background-color: {MomentoDeEscucha(rta.Momento)}
-          width: {TiempoEnHoras(rta.TiempoDeEscucha)}px"
+        <div 
+          class="nota"
+          style= "width: {TiempoEnHoras(rta.TiempoDeEscucha)}px;
+          background-color: {MomentoDeEscucha(rta.MomentoDeEscucha)};"
       ></div>  
         <!-- <img src="{Plataforma(rta.Plataforma)}" alt="sombra"> -->
         <!-- style="width: {TiempoEnHoras(rta.TiempoDeEscucha)}px;"  -->
@@ -148,9 +148,11 @@
     margin: 5px 0;
   } */
   .nota {
-    filter: brightness(0) invert(1);
-    mix-blend-mode: color;
-    width: 100px;
+    /* filter: brightness(0) invert(1);
+    mix-blend-mode: color; */
+    /* background-color: {MomentoDeEscucha(rta.Momento)}; */
+    filter: brightness(0) saturate(100%) hue-rotate(240deg);
+    /* width: 50px; */
     z-index: 2;
   }
   .name {
