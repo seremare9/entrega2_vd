@@ -80,3 +80,43 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.footer {
+  background-color: #333; /* Color de fondo del footer */
+  color: #fff; /* Color del texto */
+  padding: 20px 0; /* Padding vertical */
+  text-align: center; /* Alinear el texto centrado */
+}
+
+.footer-container {
+  max-width: 1000px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centrar el contenedor horizontalmente */
+  
+}
+
+.atribucion {
+  font-size: 14px; /* Tamaño de la fuente */
+  margin-bottom: 10px; /* Margen inferior */
+}
+
+.redes-sociales {
+  display: flex; /* Mostrar los íconos en línea */
+  justify-content: center; /* Centrar los íconos horizontalmente */
+}
+
+.redes-sociales a {
+  margin: 0 10px; /* Margen entre íconos */
+}
+
+.redes-sociales img {
+  width: 30px; /* Ancho de los íconos */
+  height: 30px; /* Alto de los íconos */
+}
+
+.github-link {
+  display: block; /* Mostrar el enlace como bloque */
+  margin-top: 10px; /* Margen superior */
+  text-decoration: none; /* Quitar el subrayado */
+  color: #fff; /* Color del texto del enlace */
+  font-weight: bold; /* Texto en negrita */
+}

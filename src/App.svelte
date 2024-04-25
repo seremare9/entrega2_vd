@@ -44,11 +44,8 @@
 
 <main>
   <div class="header">
-    <img src="/images/logo.png" width="100" alt="logo" />
-    <h3 class="headline">
-      <b>Preferencias Musicales</b>
-      Visualización de Datos
-    </h3>
+    <img src="/images/logo.png" width="100" alt="logo" class="logo" />
+    <h3 class="headline"> <b>Preferencias Musicales</b> </h3>
   </div>
 
   <!-- Conedor de las entidades -->
@@ -110,18 +107,25 @@
   </div>
 </main>
 
-<footer>
-  <p class="bajada"> Representacion visual creado por Serena Marelli y Josefina Jahde</p>
-  <h4>Redes Sociales</h4>
-    <ul class="social-links">
-      <li><a href="https://www.linkedin.com/in/josefina-jahde/" target="_blank">Linkedin jose</a></li>
-      <li><a href="" target="_blank">Linkedin sere</a></li>
-    </ul>
+<footer class="footer">
+  <div class="footer-container">
+    <p class="atribucion">Representación visual creada por <a href="https://www.linkedin.com/in/serena-marelli/">Serena Marelli</a> y <a href="https://www.linkedin.com/in/josefina-jahde/">Josefina Jahde</a></p>
+
+    <div class="redes-sociales">
+      <a href="https://www.linkedin.com/in/serena-marelli/"><img src="../images/logo-linkedin.png" alt="LinkedIn Serena Marelli"></a>
+      <a href="https://www.linkedin.com/in/josefina-jahde/"><img src="/images/logo-linkedin.png" alt="LinkedIn Josefina Jahde"></a>
+    </div>
+
+    <a href="https://github.com/seremare9/entrega2_vd.git" class="github-link">Ver código en GitHub</a>
+  </div>
 </footer>
 
-     
-
 <style>
+  .logo {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+  }
   .header {
     display: flex;
     justify-content: center;
@@ -132,10 +136,11 @@
   }
   .headline {
     font-size: 30px;
-    line-height: 1.2;
+    line-height: 1.5;
     font-weight: normal;
     text-align: center;
     margin: 20px;
+    top: 3%;
   }
   .bajada {
     font-size: 18px;
@@ -198,6 +203,5 @@
   position: absolute; /*posiciona las notas musicales arriba de los ciruclos/cuadrado*/
   transform: translate(3%, -30%) /* Traslada las notas hacia la derecha y hacia arriba*/
 }
-
 
 </style>
