@@ -44,8 +44,9 @@
 
 <main>
   <div class="header">
-    <img src="/images/logo.png" width="100" alt="logo" class="logo" />
-    <h3 class="headline"> <b>Preferencias Musicales</b> </h3>
+    <img src="/images/logo.png" width="90" alt="logo" class="logo" />
+    <h1 class="headline"> <b>Preferencias Musicales</b> </h1>
+    <h4>  Representación visual y significativa de los gustos musicales del curso de VD (alumnos y profesores) </h4>
   </div>
 
   <!-- Conedor de las entidades -->
@@ -73,7 +74,7 @@
             </svg>
             
           {:else if rta.Genero == "No Binario"}
-          <svg width="{TiempoEnHoras(rta.TiempoEnHoras)}" viewBox="0 0 45 122" fill="{MomentoDeEscucha(rta.Momento)}" xmlns="http://www.w3.org/2000/svg">
+          <svg width="60" viewBox="0 0 45 122" fill="{MomentoDeEscucha(rta.Momento)}" xmlns="http://www.w3.org/2000/svg">
             <path d="M41.4101 0C41.3001 58.76 41.3201 82.96 41.4101 88C41.4101 88.08 41.4401 89.75 41.4101 92C41.3201 98.8 41.2701 102.2 40.4101 105C38.6101 110.88 33.5901 114.22 32.4101 115C22.4801 121.6 6.10006 119.04 3.41006 112C1.38006 106.69 7.56006 99.93 8.41006 99C19.3101 87.07 39.2601 91.49 41.4101 92" fill="{MomentoDeEscucha(rta.Momento)}"/>
             <path d="M41.4101 0C41.3001 58.76 41.3201 82.96 41.4101 88C41.4101 88.08 41.4401 89.75 41.4101 92M41.4101 92C41.3201 98.8 41.2701 102.2 40.4101 105C38.6101 110.88 33.5901 114.22 32.4101 115C22.4801 121.6 6.10006 119.04 3.41006 112C1.38006 106.69 7.56006 99.93 8.41006 99C19.3101 87.07 39.2601 91.49 41.4101 92Z" 
             stroke="{MomentoDeEscucha(rta.Momento)}" stroke-width="6" stroke-miterlimit="10"/>
@@ -135,22 +136,15 @@
     margin-bottom: 80px;
   }
   .headline {
-    font-size: 30px;
+    position: absolute;
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); /* Esto lo centra completamente */
+    font-size: 35px;
     line-height: 1.5;
     font-weight: normal;
-    text-align: center;
-    margin: 20px;
-    top: 3%;
   }
-  .bajada {
-    font-size: 18px;
-    font-weight: normal;
-    text-align: center;
-    margin: 10px;
-  }
-  .headline b {
-    display: block;
-  }
+ 
   .container {
     display: flex;
     justify-content: center;
