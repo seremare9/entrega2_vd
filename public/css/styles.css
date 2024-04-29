@@ -13,10 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  background-color:floralwhite;
-  color: black;
-}
 
 a {
   font-weight: 500;
@@ -28,9 +24,12 @@ a:hover {
 }
 
 body {
+  background-color:floralwhite;
+  color: black;
   margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
+  padding-top: 2rem; /* Añadir un espacio en la parte superior del cuerpo */
+  margin: 0; /* Asegurar que no haya margen adicional */
+  
 }
 
 h1 {
@@ -38,15 +37,9 @@ h1 {
   line-height: 1.1;
 }
 
-.card {
-  padding: 2em;
-}
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  /* text-align: center; */
 }
 
 button {
@@ -89,9 +82,7 @@ button:focus-visible {
 }
 
 .footer-container {
-  max-width: 1000px; /* Ancho máximo del contenedor */
   margin: 0 auto; /* Centrar el contenedor horizontalmente */
-  
 }
 
 .atribucion {
@@ -119,11 +110,4 @@ button:focus-visible {
   text-decoration: none; /* Quitar el subrayado */
   color: #fff; /* Color del texto del enlace */
   font-weight: bold; /* Texto en negrita */
-}
-
-.svg-hombre:hover,
-.svg-mujer:hover,
-.svg-no-binario:hover {
-  transform: scale(1.2); /* Aumentar tamaño un 20% al pasar el mouse */
-  transition: transform 0.2s ease-in-out; /* Agregar una transición suave */
 }
