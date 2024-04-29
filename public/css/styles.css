@@ -120,3 +120,10 @@ button:focus-visible {
   color: #fff; /* Color del texto del enlace */
   font-weight: bold; /* Texto en negrita */
 }
+
+.svg-hombre:hover,
+.svg-mujer:hover,
+.svg-no-binario:hover {
+  transform: scale(1.2); /* Aumentar tamaño un 20% al pasar el mouse */
+  transition: transform 0.2s ease-in-out; /* Agregar una transición suave */
+}

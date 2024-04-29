@@ -55,7 +55,7 @@
       <div class="person-container">
         <div class="aspectoNota">
           {#if rta.Genero == "Masculino"}
-          <svg width="{TiempoEnHoras(rta.TiempoEnHoras)}" viewBox="0 0 111 153" fill="{MomentoDeEscucha(rta.Momento)}" xmlns="http://www.w3.org/2000/svg">
+          <svg width="{TiempoEnHoras(rta.TiempoEnHoras)}" viewBox="0 0 111 153" fill="{MomentoDeEscucha(rta.Momento)}" xmlns="http://www.w3.org/2000/svg" class="svg-hombre">
             <path d="M40.4101 94.26C38.2601 93.75 18.3101 89.33 7.41006 101.26C6.56006 102.19 0.380059 108.95 2.41006 114.26C5.10006 121.3 21.4801 123.86 31.4101 117.26C32.5901 116.48 37.6101 113.14 39.4101 107.26C40.2701 104.46 40.3201 101.06 40.4101 94.26C40.4401 92.01 40.4101 90.34 40.4101 90.26C40.3001 84.14 40.0501 51.37 39.7201 2.57999" fill="{MomentoDeEscucha(rta.Momento)}"/>
             <path d="M108.88 31.95C108.77 90.71 108.79 114.91 108.88 119.95C108.88 120.03 108.91 121.7 108.88 123.95C108.79 130.75 108.74 134.15 107.88 136.95C106.08 142.83 101.06 146.17 99.8801 146.95C89.9501 153.55 73.5701 150.99 70.8801 143.95C68.8501 138.64 75.0301 131.88 75.8801 130.95C86.7801 119.02 106.73 123.44 108.88 123.95" fill="{MomentoDeEscucha(rta.Momento)}"/>
             <path d="M39.8845 26.5C62.8845 35.89 85.8415 45.11 108.842 54.5V31C85.8415 21.39 62.7297 13.61 39.7297 4L39.8845 26.5Z" fill="white"/>
@@ -66,7 +66,7 @@
           {:else if rta.Genero == "Femenino"}
           <!-- <h1> {TiempoEnHoras(rta.TiempoEnHoras)}</h1>
           <h1> {rta.TiempoEnHoras}</h1> -->
-          <svg width="{TiempoEnHoras(rta.TiempoEnHoras)}"  viewBox="0 0 85 122" fill="{MomentoDeEscucha(rta.Momento)}" xmlns="http://www.w3.org/2000/svg">
+          <svg width="{TiempoEnHoras(rta.TiempoEnHoras)}"  viewBox="0 0 85 122" fill="{MomentoDeEscucha(rta.Momento)}" xmlns="http://www.w3.org/2000/svg" class="svg-mujer">
             <path d="M42.96 2.70001C43.58 5.38001 44.38 7.41001 44.96 8.70001C45.86 10.72 48.12 15.2 61.38 28.28C62.31 29.2 62.34 29.22 62.73 29.61C67.28 34.17 79.19 47.15 81.38 62.28C83.81 79.16 73.39 93.6 72.38 93.28C71.39 92.97 79.31 78.55 74.38 62.28C70.71 50.16 61.82 43.35 60.38 42.28C54.17 37.65 47.95 35.96 44.38 35.28C43.91 24.42 43.43 13.56 42.96 2.70001Z" fill="{MomentoDeEscucha(rta.Momento)}"/>
             <path d="M41.4101 0C41.3001 58.76 41.3201 82.96 41.4101 88C41.4101 88.08 41.4401 89.75 41.4101 92C41.3201 98.8 41.2701 102.2 40.4101 105C38.6101 110.88 33.5901 114.22 32.4101 115C22.4801 121.6 6.10006 119.04 3.41006 112C1.38006 106.69 7.56006 99.93 8.41006 99C19.3101 87.07 39.2601 91.49 41.4101 92" fill="{MomentoDeEscucha(rta.Momento)}"/>
             <path d="M41.4101 0C41.3001 58.76 41.3201 82.96 41.4101 88C41.4101 88.08 41.4401 89.75 41.4101 92M41.4101 92C41.3201 98.8 41.2701 102.2 40.4101 105C38.6101 110.88 33.5901 114.22 32.4101 115C22.4801 121.6 6.10006 119.04 3.41006 112C1.38006 106.69 7.56006 99.93 8.41006 99C19.3101 87.07 39.2601 91.49 41.4101 92ZM42.96 2.70001C43.58 5.38001 44.38 7.41001 44.96 8.70001C45.86 10.72 48.12 15.2 61.38 28.28C62.31 29.2 62.34 29.22 62.73 29.61C67.28 34.17 79.19 47.15 81.38 62.28C83.81 79.16 73.39 93.6 72.38 93.28C71.39 92.97 79.31 78.55 74.38 62.28C70.71 50.16 61.82 43.35 60.38 42.28C54.17 37.65 47.95 35.96 44.38 35.28C43.91 24.42 43.43 13.56 42.96 2.70001Z"
@@ -74,7 +74,7 @@
             </svg>
             
           {:else if rta.Genero == "No Binario"}
-          <svg width="60" viewBox="0 0 45 122" fill="{MomentoDeEscucha(rta.Momento)}" xmlns="http://www.w3.org/2000/svg">
+          <svg width="60" viewBox="0 0 45 122" fill="{MomentoDeEscucha(rta.Momento)}" xmlns="http://www.w3.org/2000/svg" class="svg-no-binario">
             <path d="M41.4101 0C41.3001 58.76 41.3201 82.96 41.4101 88C41.4101 88.08 41.4401 89.75 41.4101 92C41.3201 98.8 41.2701 102.2 40.4101 105C38.6101 110.88 33.5901 114.22 32.4101 115C22.4801 121.6 6.10006 119.04 3.41006 112C1.38006 106.69 7.56006 99.93 8.41006 99C19.3101 87.07 39.2601 91.49 41.4101 92" fill="{MomentoDeEscucha(rta.Momento)}"/>
             <path d="M41.4101 0C41.3001 58.76 41.3201 82.96 41.4101 88C41.4101 88.08 41.4401 89.75 41.4101 92M41.4101 92C41.3201 98.8 41.2701 102.2 40.4101 105C38.6101 110.88 33.5901 114.22 32.4101 115C22.4801 121.6 6.10006 119.04 3.41006 112C1.38006 106.69 7.56006 99.93 8.41006 99C19.3101 87.07 39.2601 91.49 41.4101 92Z" 
             stroke="{MomentoDeEscucha(rta.Momento)}" stroke-width="6" stroke-miterlimit="10"/>
@@ -164,19 +164,21 @@
   }
 
   .name {
-    font-size: 15px;
+    font-size: 18px;
     color: rgb(65, 65, 65);
     font-weight: bold;
     text-align: center;
     margin-top: 5px;
   }
+  .name:hover{
+    color: crimson;
+    transition: transform 0.2s ease-in-out; /* Agregar una transición suave */
+  }
   .cancionFav {
     font-size: 13px;
     color: rgb(65, 65, 65);
     font-weight: light;
-    font-style: italic;
-    text-align: center;
-    margin-top: 5px;
+    transform: translate(3%, -100%);
   }
   
   .difuminado{ /*ciruclos*/
@@ -196,6 +198,13 @@
   z-index: 2;
   position: absolute; /*posiciona las notas musicales arriba de los ciruclos/cuadrado*/
   transform: translate(3%, -30%) /* Traslada las notas hacia la derecha y hacia arriba*/
+}
+
+.svg-hombre:hover,
+.svg-mujer:hover,
+.svg-no-binario:hover {
+  transform: scale(1.2); /* Aumentar tamaño un 20% al pasar el mouse */
+  transition: transform 0.2s ease-in-out; /* Agregar una transición suave */
 }
 
 </style>
