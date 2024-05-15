@@ -111,7 +111,6 @@
 <footer class="footer">
   <div class="footer-container">
     <p class="atribucion">Representación visual creada por <a href="https://www.linkedin.com/in/serena-marelli/">Serena Marelli</a> y <a href="https://www.linkedin.com/in/josefina-jahde/">Josefina Jahde</a></p>
-    www.linkedin.com/in/serena-marelli-55243b270
     <div class="redes-sociales">
       <a href="https://www.linkedin.com/in/serena-marelli/"><img src="../images/logo-linkedin.png" alt="LinkedIn Serena Marelli"></a>
       <a href="https://www.linkedin.com/in/josefina-jahde/"><img src="/images/logo-linkedin.png" alt="LinkedIn Josefina Jahde"></a>

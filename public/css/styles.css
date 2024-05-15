@@ -111,3 +111,7 @@ button:focus-visible {
   color: #fff; /* Color del texto del enlace */
   font-weight: bold; /* Texto en negrita */
 }
+
+a {
+  color:lightsteelblue;
+}
